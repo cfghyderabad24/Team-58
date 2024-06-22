@@ -1,0 +1,15 @@
+fastapi
+python-jose[cryptography]
+starlette
+pymongo
+python-dotenv
+passlib
+pydantic
+uvicorn
+bcrypt
+python-multipart
+dnspython
+python-jose
+fastapi_mail
+boto3
+stripe 
