@@ -3,6 +3,7 @@ from src.models.donors import get_donors, get_filter_list
 from typing import List
 from starlette import status
 from src.routes.auth import user_dependency
+from src.schemas.donors import DonorBody
 
 router  = APIRouter()
 
@@ -21,3 +22,6 @@ def get_filters(user: user_dependency, filter_name: str = None):
         return {"details" : {"filters" : filters} }
     else:
         return {"details" : {"filters" : []} }
+
+
+    
