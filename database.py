@@ -10,3 +10,4 @@ mongo_client  = MongoClient(os.getenv("MONGO_URI"))
 db = mongo_client["development"]
 donors_collection = db["donors"]
 users_collections = db["users"]
+expenditurestats_collection = db['expenditurestats']
