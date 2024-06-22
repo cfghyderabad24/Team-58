@@ -8,5 +8,5 @@ class DonorBody(BaseModel):
     address : str
     contact_number : int 
     alternate_contact_number : int 
-    pan_number : int
+    pan_number : str
     donation_amount : int

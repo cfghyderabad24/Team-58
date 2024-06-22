@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from src.routes import auth
 from src.routes import donors
 from src.routes import expenditurestats
+from src.routes import donated
 import uvicorn
 
 app = FastAPI()
@@ -23,3 +24,4 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(donors.router)
 app.include_router(expenditurestats.router)
+app.include_router(donated.router)

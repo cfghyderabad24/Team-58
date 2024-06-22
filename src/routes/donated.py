@@ -1,10 +1,9 @@
-from fastapi import APIRouter, HTTPException, Query
-from src.models.donors import get_donors, get_filter_list
+from fastapi import APIRouter, HTTPException
 from typing import List
 from starlette import status
 from src.routes.auth import user_dependency
 from src.schemas.donated import DonorBody
-from src.models.donated import add_donor_data
+from src.models.donated import add_donor_data, get_donated_users
 
 
 router = APIRouter()
@@ -18,3 +17,11 @@ def feed_data(user: user_dependency, donor_body : DonorBody ):
         return {"message" : "Data has been fed successfully"}
     else:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Data could not be fed")
+    
+@router.get("/v1/fetch-donated-users")
+def fetch_donated_users():
+    response = get_donated_users()
+    if response:
+        return response
+    else:
+        raise HTTPException(status_code=404, detail="No data found")
