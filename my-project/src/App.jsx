@@ -1,12 +1,34 @@
 import React from "react";
-import './App.css'
-import NavBar from "./compnents/NavBar";
+//import './App.css';
+import {createBrowserRouter,RouterProvider} from 'react-router-dom';
+import Home from "./compnents/home/Home";
+//import BarChart from "./compnents/barchart/BarChart";
+import RootLayout from "./RootLayout";
 
 function App() {
  
+  const browserRouter=createBrowserRouter([{
+    path:'',
+    element:<RootLayout />,
+    children:[
+      {
+        path:'/',
+        element:<Home />
+      },
+      // {
+      //   path:'barchart',
+      //   element:<BarChart/>
+      // }
+      
+
+
+    ]
+
+  }])
   return (
    <div>
-    <NavBar />
+   
+   <RouterProvider router={browserRouter} />
    </div>
   )
 }
