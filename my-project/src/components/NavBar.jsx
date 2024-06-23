@@ -1,26 +1,21 @@
 import React, { useState } from "react";
-
-import Login from "./login/Login";
-
-
+import Signup from "./Signup"; // Import the Signup component
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [showSignup, setShowSignup] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
-
 
   const handleNGOLoginClick = () => {
     setShowSignup(true);
   };
 
   if (showSignup) {
-    return <Login />; // Replace the entire content with the Signup component
+    return <Signup />; // Replace the entire content with the Signup component
   }
-
 
   return (
     <div>
@@ -67,11 +62,7 @@ function NavBar() {
                   </a>
                 </li>
                 <li>
-
-                  <a href="#statistics" className="text-white hover:underline">
-
-        
-
+                  <a href="#" className="text-white hover:underline">
                     Statistics
                   </a>
                 </li>
@@ -81,13 +72,9 @@ function NavBar() {
                   </a>
                 </li>
                 <li>
-
                   <button onClick={handleNGOLoginClick} className="text-white hover:underline">
                     NGO Login
                   </button>
-
-               
-
                 </li>
               </ul>
             </div>
