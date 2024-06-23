@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import BarChart from '../barchart/BarChart';
 
@@ -50,15 +51,21 @@ function Home() {
                   </li>
                 ))}
               </ul>
+
             </div>
           </div>
         </div>
       </div>
+
       </div>
 
       <BarChart className = "mt-20"/>
+
+
     </div>
   );
 }
 
+
 export default Home;
+
