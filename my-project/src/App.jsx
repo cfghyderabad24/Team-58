@@ -1,4 +1,5 @@
 import React from "react";
+
 //import './App.css';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import Home from "./compnents/home/Home";
@@ -28,12 +29,13 @@ function App() {
     ]
 
   }])
+
+
   return (
    <div>
-   
-   <RouterProvider router={browserRouter} />
+    <RouterProvider router={browserRouter}/>
    </div>
-  )
+  );
 }
 
 export default App
