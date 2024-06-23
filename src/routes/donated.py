@@ -11,7 +11,7 @@ router = APIRouter()
 
 
 @router.post("/v1/feed-donor-data")
-def feed_data(user: user_dependency, donor_body : DonorBody ):
+def feed_data(donor_body : DonorBody ):
     response = add_donor_data(donor_body)
     if response:
         return {"message" : "Data has been fed successfully"}
